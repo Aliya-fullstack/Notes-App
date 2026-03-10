@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Notes App</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="Note-app-stylling.css">
+
+  
+
+<header>
+  <div class="header-badge">✦ Personal Workspace</div>
+  <h1>My <span>Notes</span></h1>
+  <p class="subtitle">Capture your thoughts, ideas &amp; to-dos.</p>
+  <div class="divider"></div>
+</header>
+
+<main>
+  <!-- Input Card -->
+  <div class="input-card">
+    <div class="input-row">
+      <div class="input-wrap">
+        <label class="input-label" for="noteInput">New note</label>
+        <textarea id="noteInput" placeholder="Write something worth remembering…" rows="2"></textarea>
+      </div>
+      <button class="btn-add" onclick="addNote()">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M7.5 1v13M1 7.5h13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Add Note
+      </button>
+    </div>
+  </div>
+
+  <!-- Notes meta bar -->
+  <div class="notes-meta" id="notesMeta" style="display:none">
+    <div class="notes-count" id="notesCount">Notes <span>0 saved</span></div>
+    <button class="btn-clear-all" onclick="clearAll()">Clear all</button>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state visible" id="emptyState">
+    <div class="empty-icon">📋</div>
+    <p>No notes yet.<br/>Start writing above — your thoughts deserve a home.</p>
+  </div>
+
+  <!-- Notes list -->
+  <div id="notesList"></div>
+</main>
+
+<div id="toast"></div>
+
+
+<!-- Js link -->
+  <script src="Note-app-script.js"></script>
